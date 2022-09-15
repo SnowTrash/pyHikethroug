@@ -1,19 +1,3 @@
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Thanks again! Now go create something AMAZING! :D
--->
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -28,10 +12,10 @@
     <img src="https://snowtrash.github.io/pyHikethroug/src/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">I7042 - Simulacion por computadora</h3>
+  <h3 align="center">Datos vs Python</h3>
 
   <p align="center">
-    Portafolio de evidencias de la materia de Simulacion por computadora
+    Portafolio de evidencias
     <br />
     <a href="https://github.com/SnowTrash/pyHikethroug"><strong>Explora los documentos»</strong></a>
     <br />
@@ -64,29 +48,28 @@
 <!-- ABOUT THE PROJECT -->
 ## Sobre el Proyecto
 
-![Imagen Para el Proyecto][product-screenshot] [HTML](https://www.w3schools.com/html/default.asp)
+![Imagen Para el Proyecto][product-screenshot] 
 
-Este proyecto es un portafolio Para la clase de
-(I7042)Simulacion por computadora impartida por : 
+Este proyecto es un portafolio para las materias I5911(Mineria de datos) y I5912(Clasificacion inteligente de datos)
 * 
 
 ### Construido con
 
-* [HTML](https://www.w3schools.com/html/default.asp)
-* [CSS](https://www.w3schools.com/css/default.asp)
-* [Javascript](https://www.w3schools.com/js/default.asp)
-* [CssZengarden](https://github.com/mezzoblue/csszengarden.com/tree/master/168)
-* [Blender](https://docs.blender.org/)
-* [Unity](https://docs.unity.com/)
-* [Babylon](https://doc.babylonjs.com/)
-
+* [Dataspell](https://www.jetbrains.com/es-es/dataspell/)
+* [Anaconda](https://anaconda.org/)
+* [Jupyter Notebooks](https://jupyter.org/)
+* [Google Collab](https://colab.research.google.com/)
+* 
 <!-- GETTING STARTED -->
 ## Como empezar
-Necesitaras instalar Blender o Unity, clonar el repositorio(crear copia local) y 
-despues comenzar a modificar los archivos en tu editor.
+Clonar el repositorio
+    git clone https://github.com/SnowTrash/pyHikethroug.git
+
+Para construir un ambiente para ML y clasificacion de datos en tu dispositivo:
+
+Puedes trabajar directamente en Google Collab:
 
 Si quieres contribuir y no sabes como hacerlo dentro de github
-
 Envialo a : juan.vargas2962@alumnos.udg.mx 
 
 <!-- ROADMAP -->
