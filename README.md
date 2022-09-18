@@ -12,10 +12,9 @@
     <img src="https://snowtrash.github.io/pyHikethroug/src/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Datos vs Python</h3>
+  <h3 align="center">Datos vs Anaconda(docker)</h3>
 
   <p align="center">
-    Portafolio de evidencias
     <br />
     <a href="https://github.com/SnowTrash/pyHikethroug"><strong>Explora los documentos»</strong></a>
     <br />
@@ -45,32 +44,81 @@
     <li><a href="#referencias-y-recursos">Referencias y Recursos</a></li>
   </ol>
 </details>
+
 <!-- ABOUT THE PROJECT -->
+
 ## Sobre el Proyecto
 
 ![Imagen Para el Proyecto][product-screenshot] 
 
-Este proyecto es un portafolio para las materias I5911(Mineria de datos) y I5912(Clasificacion inteligente de datos)
+Este portafolio contiene los .ipybn que corresponden a las actividades de I5911(Mineria de datos) y I5912(Clasificacion inteligente de datos)
 * 
 
 ### Construido con
 
-* [Dataspell](https://www.jetbrains.com/es-es/dataspell/)
-* [Anaconda](https://anaconda.org/)
+* [Docker](https://docs.docker.com/desktop/install/linux-install/)
+* [Continuumio/Anaconda](https://hub.docker.com/r/continuumio/anaconda3/)
+* [Python](https://www.python.org/downloads/source/)
 * [Jupyter Notebooks](https://jupyter.org/)
+* [Orange3](https://anaconda.org/ales-erjavec/orange3)
 * [Google Collab](https://colab.research.google.com/)
-* 
 <!-- GETTING STARTED -->
 ## Como empezar
 Clonar el repositorio
     git clone https://github.com/SnowTrash/pyHikethroug.git
 
+Puedes trabajar directamente en Google Collab abriendo los archivos desde el boton en la parte superior y guardando una copia en tu Drive personal
+
 Para construir un ambiente para ML y clasificacion de datos en tu dispositivo:
+  
+* Instalamos Docker
+```
+sudo apt update
+sudo apt install -y docker.io
+sudo systemctl enable docker --now
+docker 
+```
 
-Puedes trabajar directamente en Google Collab:
+* Instalaremos el docker de anaconda
+``` 
+docker pull continuumio/anaconda3  
+```
+### Alto
+En este punto te recomendaria revisar el siguiente [Enlace](https://linuxconfig.org/how-to-move-docker-s-default-var-lib-docker-to-another-directory-on-ubuntu-debian-linux)
+Para que realices la configuracion que creas necesaria.
 
-Si quieres contribuir y no sabes como hacerlo dentro de github
-Envialo a : juan.vargas2962@alumnos.udg.mx 
+* Iniciaremos el docker con los puertos usados para jupyter y tensorflow, e instalaremos jupyter
+```  
+docker run -i -t -p 8888:8888 -p 6006:6006 continuumio/anaconda3 /bin/bash -c "\
+    conda install jupyter -y --quiet && \
+    mkdir -p /opt/notebooks && \
+    jupyter notebook \
+    --notebook-dir=/opt/notebooks --ip='*' --port=8888 \
+    --no-browser --allow-root"
+```
+* Cerramos el docker y le damos un update upgrade a nuestro sistema
+```
+docker ps -a -q  --filter ancestor=continuumio/anaconda3
+sudo apt-get update && upgrade 
+```
+
+* Iniciamos el docker
+```
+docker run -i -t -p 8888:8888 -p 6006:6006 continuumio/anaconda3 /bin/bash -c "\
+jupyter notebook \
+    --notebook-dir=/opt/notebooks --ip='*' --port=8888 \
+    --no-browser --allow-root"
+```
+* instalamos algunas librerias
+```
+apt-get update && apt-get install -y libgtk2.0-dev  && rm -rf /var/lib/apt/lists/*
+conda install python=3
+conda update -n base -c defaults conda
+conda install anaconda-client
+conda install numpy pandas scikit-learn matplotlib seaborn pyyaml h5py keras -y 
+conda upgrade dask 
+pip install tensorflow imutils
+```
 
 <!-- ROADMAP -->
 ## Avances
@@ -81,6 +129,9 @@ Puedes ver los [Issues Abiertos](https://github.com/SnowTrash/pyHikethroug/issue
 ## Contribuir
 
 Las contribuciones y el espiritu de comunidad es lo que mantiene a este proyecto vivo , por lo que todas las contribuciones que se quiean realizar son  **altamente apreciadas**.
+
+Si quieres contribuir y no sabes como hacerlo dentro de github
+Envialo a : juan.vargas2962@alumnos.udg.mx 
 <br>
 
 1. (_fork the proyect_) Para contribuir debes [Bifurcar un repositorio](https://docs.github.com/es/github/getting-started-with-github/fork-a-repo) así no afectarás el proyecto original 
@@ -103,12 +154,8 @@ Link del proyecto: [Portafolio de Proyectos](https://github.com/SnowTrash/pyHike
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Referencias y Recursos
-### Blender y Unity resources
 
-### Para el estilo 
-* [Weirdcore](https://aesthetics.fandom.com/wiki/Weirdcore)
-* [Weirdcore](https://aesthetics.fandom.com/wiki/Weirdcore)
-* [Weirdcore](https://aesthetics.fandom.com/wiki/Weirdcore)
+### Proyectos usados
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
@@ -124,5 +171,4 @@ Link del proyecto: [Portafolio de Proyectos](https://github.com/SnowTrash/pyHike
 [license-url]: https://github.com/SnowTrash/pyHikethroug/blob/main/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: www.linkedin.com/in/juanvargasudg
-[product-screenshot]: https://snowtrash.github.io/I7042/logo.png
->>>>>>> 31cffe1 (updt)
+[product-screenshot]: https://snowtrash.github.io/pyHiketheoug/src/logo/.png
